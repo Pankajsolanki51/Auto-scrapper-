@@ -34,7 +34,7 @@ pip install pandas requests selenium BeautifulSoup4 pymupdf ocrmypdf twilio
 ```
 ## Script Details
 
-- **Script 1: SCRAP_DATA.py**
+## Script 1: `SCRAP_DATA.py`
 - **Purpose:** Scrapes announcements from the BSE website, organizes data into CSV files, and downloads related PDFs.
 - **Steps:**
   - Initializes a headless Chrome WebDriver.
@@ -43,7 +43,7 @@ pip install pandas requests selenium BeautifulSoup4 pymupdf ocrmypdf twilio
   - Saves announcement details in a CSV, using a date-based folder structure.
   - Downloads associated PDFs into a specified folder
     
-**Script 2: TEXT_FROM_PDF.py** 
+## Script 2: `TEXT_FROM_PDF.py`
 - **Purpose:** Processes downloaded PDFs by extracting text, performing OCR if needed, and logging errors.
 - **Steps:**
   - Reads PDFs downloaded by Script 1.
