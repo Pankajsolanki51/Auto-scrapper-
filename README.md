@@ -5,11 +5,19 @@ This project automates the extraction, processing, and notification of announcem
 ### Project Components
 The project is comprised of three scripts:
 
-- **Script 1: Data Scraping**  
+- **Script 1: SCRAP_DATA.py**  
   Collects announcements from the BSE website, organizes them, and downloads associated PDF files.
 
-- **Script 2: PDF Processing**  
+- **Script 2: TEXT_FROM_PDF.py**  
   Extracts text from the PDFs, including OCR if needed, and stores extracted information.
 
-- **Script 3: Keyword Search and Notification**  
+- **Script 3: SCHEME_FILTER.py**  
   Searches the extracted data for specific keywords, checks for recent announcements, and triggers notifications.
+
+## Project Workflow
+
+Each script runs in sequence to ensure data consistency across stages. Here’s the overall workflow:
+
+- **Script 1** scrapes announcements and downloads PDFs.
+- **Script 2** processes the PDFs, extracts text, and performs OCR if needed.
+- **Script 3** searches for keywords and sends notifications if specified keywords (e.g., “Scheme Of Arrangement”) appear.
