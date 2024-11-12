@@ -31,3 +31,5 @@ To run the scripts, the following Python libraries are required:
 
 ```python
 pip install pandas requests selenium BeautifulSoup4 pymupdf ocrmypdf twilio
+```
+## Script Details
