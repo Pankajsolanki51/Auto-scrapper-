@@ -28,3 +28,6 @@ To run the scripts, the following Python libraries are required:
 
 - **Standard Libraries:** `os`, `time`, `re`, `csv`, `smtplib`
 - **Third-party Libraries:** `pandas`, `requests`, `selenium`, `BeautifulSoup4`, `pymupdf` (fitz), `ocrmypdf`, `twilio`
+
+```python
+pip install pandas requests selenium BeautifulSoup4 pymupdf ocrmypdf twilio
