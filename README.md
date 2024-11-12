@@ -33,7 +33,7 @@ To run the scripts, the following Python libraries are required:
 pip install pandas requests selenium BeautifulSoup4 pymupdf ocrmypdf twilio
 ```
 ## Script Details
-### Script: `schedule_script_runner.py`
+### Script: `BSE_AUTO.py`
 
 - **Purpose:** Manages the scheduled execution of three data processing scripts every 5 minutes, with an automated stop condition at a specified time.
 
