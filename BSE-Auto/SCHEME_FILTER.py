@@ -32,10 +32,10 @@ def update_last_processed_time(output_dir, target_date, last_time):
 
 # Function to make a call via Twilio
 def notify_via_call(message):
-    account_sid = 'ACf402e9568c646be1559cf8b72bc5afde'
-    auth_token = '94aece4a2aecd5857c7e5987b18e36db'
-    from_phone = '+15024420395'
-    to_phone = '+919717004484'
+    account_sid = os.getenv('ACCOUNT_SID')
+    auth_token = os.getenv('AUTH_TOKEN')
+    from_phone = os.getenv('FROM_PHONE')
+    to_phone = os.getenv('TO_PHONE')
 
     client = Client(account_sid, auth_token)
     call = client.calls.create(
@@ -47,8 +47,8 @@ def notify_via_call(message):
 
 # Function to send email with attachment
 def send_email_with_attachment(subject, body, to_email, attachment_path):
-    from_email = 'externaluse25@gmail.com'
-    from_password = 'gijm wjoo dlio xcge'
+    from_email = os.getenv('SENDER_EMAIL')
+    from_password = os.getenv('EMAIL_APP_PASSWORD')
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
@@ -174,7 +174,7 @@ def search_in_specific_csv(input_root_dir, output_dir, company_names, target_dat
             send_email_with_attachment(
                 subject="Keyword Found: Scheme Of Arrangement",
                 body=f"Data file for the keyword 'Scheme Of Arrangement' is attached.",
-                to_email="deepak.tondak@gmail.com",  # Replace with actual recipient email
+                to_email=os.getenv('TO_EMAIL'),  # Replace with actual recipient email
                 attachment_path=output_file
             )
         else:
