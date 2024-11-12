@@ -33,3 +33,12 @@ To run the scripts, the following Python libraries are required:
 pip install pandas requests selenium BeautifulSoup4 pymupdf ocrmypdf twilio
 ```
 ## Script Details
+
+- **Script 1: SCRAP_DATA.py**
+- - **Purpose:** Scrapes announcements from the BSE website, organizes data into CSV files, and downloads related PDFs.
+- **Steps:**
+  - Initializes a headless Chrome WebDriver.
+  - Sets the date range for announcements.
+  - Collects announcement details, such as title, content, insider info, PDF link, and category.
+  - Saves announcement details in a CSV, using a date-based folder structure.
+  - Downloads associated PDFs into a specified folder
