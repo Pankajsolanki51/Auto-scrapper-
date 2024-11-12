@@ -35,10 +35,30 @@ pip install pandas requests selenium BeautifulSoup4 pymupdf ocrmypdf twilio
 ## Script Details
 
 - **Script 1: SCRAP_DATA.py**
-- - **Purpose:** Scrapes announcements from the BSE website, organizes data into CSV files, and downloads related PDFs.
+- **Purpose:** Scrapes announcements from the BSE website, organizes data into CSV files, and downloads related PDFs.
 - **Steps:**
   - Initializes a headless Chrome WebDriver.
   - Sets the date range for announcements.
   - Collects announcement details, such as title, content, insider info, PDF link, and category.
   - Saves announcement details in a CSV, using a date-based folder structure.
   - Downloads associated PDFs into a specified folder
+    
+**Script 2: TEXT_FROM_PDF.py** 
+- **Purpose:** Processes downloaded PDFs by extracting text, performing OCR if needed, and logging errors.
+- **Steps:**
+  - Reads PDFs downloaded by Script 1.
+  - Attempts text extraction from each PDF.
+  - If text extraction fails, performs OCR and retries
+  - Logs errors in a CSV if both extraction and OCR fail.
+  - Saves extracted text data in a structured format.
+### Script 3: `SCHEME_FILTER.py`
+
+- **Purpose:** Searches for specific keywords in extracted data and sends notifications via SMS, call, or email if relevant keywords are found.
+- **Steps:**
+  - Reads extracted text data.
+  - Searches for keywords (e.g., “Scheme Of Arrangement”).
+  - Checks if a similar announcement was made in the past six months to prevent duplicate notifications.
+  - Sends notifications using Twilio if a new keyword is detected.
+  - Logs results in an output CSV for reference.
+    
+ 
